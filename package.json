@@ -1,0 +1,24 @@
+{
+  "name": "airtable-printer",
+  "version": "1.0.0",
+  "description": "Airtable data printer with Pug and Stylus",
+  "main": "index.js",
+  "scripts": {
+    "build": "pug src/templates/*.pug -o dist/ && stylus src/styles/*.styl -o dist/css/",
+    "watch": "pug src/templates/*.pug -o dist/ -w & stylus src/styles/*.styl -o dist/css/ -w",
+    "dev": "npm run build && live-server dist/"
+  },
+  "devDependencies": {
+    "pug": "^3.0.2",
+    "stylus": "^0.62.0",
+    "live-server": "^1.2.2"
+  },
+  "keywords": [
+    "airtable",
+    "pug",
+    "stylus",
+    "printer"
+  ],
+  "author": "",
+  "license": "MIT"
+}

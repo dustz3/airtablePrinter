@@ -1,0 +1,64 @@
+doctype html
+html(lang="zh-TW")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Airtable 資料列印器
+    link(rel="stylesheet" href="css/main.css")
+  
+  body
+    .container
+      header
+        h1 Airtable 資料列印器
+        p 選擇資料表單並指定欄位，然後列印結果
+    
+      main
+        .selection-panel
+          .table-selection
+            h3 資料表單選擇
+            .form-group
+              label(for="table1") 表單 1:
+              .table-display
+                span.table-name 產品資料 (Products)
+            
+            .form-group
+              label(for="row1") 列號:
+              input#row1(type="number" min="1" placeholder="輸入列號")
+            
+            .form-group
+              label 欄位選擇:
+              .field-checkboxes#fields1Checkboxes
+                .loading-text 載入中...
+          
+          .table-selection
+            h3 資料表單選擇
+            .form-group
+              label(for="table2") 表單 2:
+              .table-display
+                span.table-name 客戶資料 (Customers)
+            
+            .form-group
+              label(for="row2") 列號:
+              input#row2(type="number" min="1" placeholder="輸入列號")
+            
+            .form-group
+              label 欄位選擇:
+              .field-checkboxes#fields2Checkboxes
+                .loading-text 載入中...
+        
+        .action-buttons
+          button#fetchData.btn.btn-primary 取得資料
+          button#printData.btn.btn-secondary(disabled) 列印資料
+          button#previewData.btn.btn-info 預覽表格樣式
+        
+        .data-display
+          #tableContainer
+            table#dataTable
+              thead
+                tr
+                  th 欄位名稱
+                  th 表單 1 資料
+                  th 表單 2 資料
+              tbody#tableBody
+    
+    script(src="js/main.js") 

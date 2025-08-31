@@ -1,0 +1,286 @@
+// 變數
+primary-color = #3498db
+secondary-color = #2ecc71
+info-color = #17a2b8
+danger-color = #e74c3c
+warning-color = #f39c12
+light-gray = #ecf0f1
+dark-gray = #2c3e50
+border-radius = 8px
+box-shadow = 0 2px 10px rgba(0,0,0,0.1)
+
+// 全域樣式
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+body
+  font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  background-color #f8f9fa
+  color dark-gray
+  line-height 1.6
+
+.container
+  max-width 1200px
+  margin 0 auto
+  padding 20px
+
+// Header
+header
+  text-align center
+  margin-bottom 40px
+  padding 30px 0
+  background white
+  border-radius border-radius
+  box-shadow box-shadow
+  
+  h1
+    color primary-color
+    margin-bottom 10px
+    font-size 2.5em
+  
+  p
+    color #666
+    font-size 1.1em
+
+// 主要內容區域
+main
+  background white
+  border-radius border-radius
+  box-shadow box-shadow
+  padding 30px
+
+// 選擇面板
+.selection-panel
+  display grid
+  grid-template-columns 1fr 1fr
+  gap 30px
+  margin-bottom 30px
+  
+  @media (max-width: 768px)
+    grid-template-columns 1fr
+
+.table-selection
+  padding 20px
+  background light-gray
+  border-radius border-radius
+  
+  h3
+    color primary-color
+    margin-bottom 20px
+    font-size 1.3em
+
+.form-group
+  margin-bottom 15px
+  
+  label
+    display block
+    margin-bottom 5px
+    font-weight 600
+    color dark-gray
+  
+  input, select
+    width 100%
+    padding 10px
+    border 2px solid #ddd
+    border-radius border-radius
+    font-size 14px
+    transition border-color 0.3s ease
+    
+    &:focus
+      outline none
+      border-color primary-color
+      box-shadow 0 0 0 3px rgba(52, 152, 219, 0.1)
+
+  .table-display
+    width 100%
+    padding 10px
+    background-color #f8f9fa
+    border 2px solid #ddd
+    border-radius border-radius
+    font-size 14px
+    color dark-gray
+    
+    .table-name
+      font-weight 600
+      color primary-color
+
+  .field-checkboxes
+    max-height 200px
+    overflow-y auto
+    border 2px solid #ddd
+    border-radius border-radius
+    padding 10px
+    background white
+    
+    .loading-text
+      color #666
+      font-style italic
+    
+    .field-item
+      display flex
+      align-items flex-start
+      justify-content flex-start
+      margin-bottom 8px
+      padding 5px
+      border-radius 4px
+      transition background-color 0.2s ease
+      
+      &:hover
+        background-color #f8f9fa
+      
+      input[type="checkbox"]
+        margin-right 8px
+        margin-top 2px
+        transform scale(1.2)
+        flex-shrink 0
+      
+      label
+        margin 0
+        font-size 14px
+        cursor pointer
+        flex 1
+        text-align left
+        line-height 1.4
+        
+        &:hover
+          color primary-color
+
+// 按鈕
+.action-buttons
+  text-align center
+  margin 30px 0
+  
+  .btn
+    padding 12px 30px
+    margin 0 10px
+    border none
+    border-radius border-radius
+    font-size 16px
+    font-weight 600
+    cursor pointer
+    transition all 0.3s ease
+    
+    &:hover
+      transform translateY(-2px)
+      box-shadow 0 4px 15px rgba(0,0,0,0.2)
+    
+    &:disabled
+      opacity 0.5
+      cursor not-allowed
+      transform none
+      box-shadow none
+
+.btn-primary
+  background primary-color
+  color white
+  
+  &:hover
+    background darken(primary-color, 10%)
+
+.btn-secondary
+  background secondary-color
+  color white
+  
+  &:hover
+    background darken(secondary-color, 10%)
+
+.btn-info
+  background info-color
+  color white
+  
+  &:hover
+    background darken(info-color, 10%)
+
+// 資料顯示區域
+.data-display
+  margin-top 30px
+  
+  #tableContainer
+    overflow-x auto
+    
+  table
+    width 100%
+    border-collapse collapse
+    background white
+    border-radius border-radius
+    overflow hidden
+    box-shadow box-shadow
+    
+    th, td
+      padding 15px
+      text-align left
+      border-bottom 1px solid #eee
+    
+    th
+      background primary-color
+      color white
+      font-weight 600
+      
+    tr:hover
+      background-color #f8f9fa
+    
+    tbody tr:last-child td
+      border-bottom none
+
+    // 樣式修改選項：
+    // 1. 改變表格邊框樣式：
+    // th, td
+    //   border 2px solid #3498db  // 藍色邊框
+    //   border 1px solid #e74c3c  // 紅色邊框
+    
+    // 2. 改變標題背景色：
+    // th
+    //   background #2c3e50  // 深灰色
+    //   background #e74c3c  // 紅色
+    //   background #27ae60  // 綠色
+    
+    // 3. 改變字體大小：
+    // th, td
+    //   font-size 16px
+    //   font-weight 500
+    
+    // 4. 改變間距：
+    // th, td
+    //   padding 20px 15px  // 上下20px，左右15px
+    
+    // 5. 改變懸停效果：
+    // tr:hover
+    //   background-color #e8f4fd  // 淺藍色
+    //   background-color #fff3cd  // 淺黃色
+
+// 響應式設計
+@media (max-width: 768px)
+  .container
+    padding 10px
+  
+  header
+    padding 20px 0
+    
+    h1
+      font-size 2em
+  
+  main
+    padding 20px
+  
+  .action-buttons .btn
+    display block
+    margin 10px 0
+    width 100%
+
+// 列印樣式
+@media print
+  .selection-panel,
+  .action-buttons
+    display none
+  
+  .data-display
+    margin 0
+    
+  table
+    box-shadow none
+    border 1px solid #000
+    
+    th, td
+      border 1px solid #000 
